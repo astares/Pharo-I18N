@@ -13,7 +13,7 @@ Class {
 { #category : #accessing }
 I18NTranslatorTest >> defaultTestClass [
 
-	^I8NTranslator
+	^I18NTranslator
 ]
 
 { #category : #initialization }
