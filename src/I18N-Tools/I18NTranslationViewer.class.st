@@ -95,5 +95,5 @@ I18NTranslationViewer >> translations: anObject [
 
 { #category : #'private initializations' }
 I18NTranslationViewer >> translator [
-	^ I8NTranslator
+	^ I18NTranslator
 ]
