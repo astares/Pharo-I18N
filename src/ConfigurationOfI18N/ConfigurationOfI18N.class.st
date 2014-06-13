@@ -159,3 +159,27 @@ ConfigurationOfI18N >> project [
 		project loadType: #linear. "change to #atomic if desired"
 		project ]
 ]
+
+{ #category : #'symbolic versions' }
+ConfigurationOfI18N >> stable: spec [
+	<symbolicVersion: #'stable'>
+
+	spec for: #'common' version: '0.1.0'.
+
+]
+
+{ #category : #versions }
+ConfigurationOfI18N >> version010: spec [
+	<version: '0.1.0' imports: #('0.1-baseline' )>
+
+	spec for: #'common' do: [
+		spec blessing: #'stable'.
+		spec description: 'version 0.1.0'.
+		spec author: 'TorstenBergmann'.
+		spec timestamp: '6/13/2014 17:16'.
+		spec 
+			package: #'I18N-Core' with: 'I18N-Core-TorstenBergmann.2';
+			package: #'I18N-Tests-Core' with: 'I18N-Tests-Core-TorstenBergmann.2';
+			package: #'I18N-Tools' with: 'I18N-Tools-TorstenBergmann.3'. ].
+
+]
