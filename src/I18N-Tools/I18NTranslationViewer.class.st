@@ -38,14 +38,6 @@ I18NTranslationViewer class >> open [
 		openWithSpec
 ]
 
-{ #category : #initialization }
-I18NTranslationViewer >> initialize [
-	super initialize.
-	self translator 
-			reset;
-			initialize
-]
-
 { #category : #'private initializations' }
 I18NTranslationViewer >> initializeTranslations [
 	| leadColumn columns |
