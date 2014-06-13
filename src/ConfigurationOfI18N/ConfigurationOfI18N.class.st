@@ -1,3 +1,6 @@
+"
+Configuration for I18N
+"
 Class {
 	#name : #ConfigurationOfI18N,
 	#superclass : #Object,
