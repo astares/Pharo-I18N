@@ -117,7 +117,7 @@ If you now open the translation viewer you will see both translations: 'Welcome'
 
 returns 'Willkommen' and 
 
-    (I18NTranslator forLanguage: 'DE') welcome.
+    (I18NTranslator forLanguage: 'EN') welcome.
 
 returns 'Welcome'.
 
