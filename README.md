@@ -5,7 +5,7 @@
 The "I18N" project provides Internationalization support for applications written in [Pharo][1] (for instance [Seaside][2] applications). It allows for simple handling of multiple translations of an app without a dependency to other external frameworks (like GetText, ...).
 
 ### Project location
-The project is located on STHub at [http://smalltalkhub.com/#!/~TorstenBergmann/I18N/][3]
+The project is located on GitHub at [https://github.com/astares/Pharo-I18N][3]
 
 ### Demo
 
@@ -307,8 +307,8 @@ So depending on own needs one can manage the translations externally in an INI f
 
   [1]: http://www.pharo.org
   [2]: http://www.seaside.st
-  [3]: http://smalltalkhub.com/#!/~TorstenBergmann/I18N/
+  [3]: https://github.com/astares/Pharo-I18N
   [4]: http://smalltalkhub.com/#!/~TorstenBergmann/Lighthouse
   [5]: https://ci.inria.fr/pharo-contribution/job/Lighthouse/
-  [6]: http://smalltalkhub.com/#!/~TorstenBergmann/INIFile
-  [7]: http://smalltalkhub.com/#!/~TorstenBergmann/I18N/
+  [6]: https://github.com/astares/Pharo-INIFile
+  [7]: https://github.com/astares/Pharo-I18N
