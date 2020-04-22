@@ -15,7 +15,7 @@ You can checkout a demo in the Lighthouse Seaside sample application. This proje
 The code of I18N is under MIT License.
 
 ## Installation
-You can load the code either in Pharo 3.0 or Pharo 4.0 easily using the given script:
+You can load the code either in Pharo easily using the given script:
 
 ```Smalltalk
 Metacello new
