@@ -33,7 +33,7 @@ I18NTranslationViewer class >> menuCommandOn: aBuilder [
 
 { #category : #'instance creation' }
 I18NTranslationViewer class >> open [
-
+	<script>
 	^(self new)
 		openWithSpec
 ]
