@@ -372,7 +372,7 @@ ConfigurationOfI18N class >> validate [
 	^ ((Smalltalk at: #MetacelloToolBox) validateConfiguration: self debug: #() recurse: false) explore
 ]
 
-{ #category : #baselines }
+{ #category : #'depreacted - baselines' }
 ConfigurationOfI18N >> baseline01: spec [
 	<version: '0.1-baseline'>
 
@@ -425,7 +425,9 @@ ConfigurationOfI18N >> project [
 ConfigurationOfI18N >> stable: spec [
 	<symbolicVersion: #'stable'>
 
-	spec for: #'common' version: '0.1.0'.
+	spec for: #'common' version: '0.2.0'.
+	spec for: #'pharo4.x' version: '0.1.0'.
+	spec for: #'pharo5.x' version: '0.1.0'.
 
 ]
 
@@ -443,4 +445,16 @@ ConfigurationOfI18N >> version010: spec [
 			package: #'I18N-Tests-Core' with: 'I18N-Tests-Core-TorstenBergmann.2';
 			package: #'I18N-Tools' with: 'I18N-Tools-TorstenBergmann.3'. ].
 
+]
+
+{ #category : #versions }
+ConfigurationOfI18N >> version020: spec [
+	<version: '0.2.0'>
+
+	spec for: #'common' do: [ 
+		spec
+			baseline: 'I18N' with: [ 
+				spec 
+					className: 'BaselineOfI18N';
+					repository: 'github://astares/Pharo-I18N/src' ]] 
 ]
