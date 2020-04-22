@@ -293,6 +293,16 @@ ConfigurationOfI18N class >> baseConfigurationClassIfAbsent: aBlock [
 
 ]
 
+{ #category : #catalog }
+ConfigurationOfI18N class >> catalogDescription [
+	^ 'Simple I18N translations'
+]
+
+{ #category : #catalog }
+ConfigurationOfI18N class >> catalogKeywords [
+	^ #(translations I18N)
+]
+
 { #category : #private }
 ConfigurationOfI18N class >> ensureMetacello [
 
