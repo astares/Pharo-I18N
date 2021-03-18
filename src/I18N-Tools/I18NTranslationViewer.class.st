@@ -25,7 +25,7 @@ I18NTranslationViewer class >> menuCommandOn: aBuilder [
 	
 	(aBuilder item: #'I18N Translations')
 		action: [ self open  ]; 
-		icon: Smalltalk ui icons scriptManagerIcon;
+		icon: (Smalltalk ui iconNamed: #scriptManagerIcon);
 		order: 5.
 		
 	aBuilder withSeparatorAfter
