@@ -1,1 +1,1 @@
-Package { #name : #'I18N-Core' }
+Package { #name : 'I18N-Core' }

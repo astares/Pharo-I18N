@@ -2,8 +2,8 @@
 A Translator
 "
 Class {
-	#name : #I18NTranslator,
-	#superclass : #Object,
+	#name : 'I18NTranslator',
+	#superclass : 'Object',
 	#instVars : [
 		'language',
 		'translationMap'
@@ -11,123 +11,126 @@ Class {
 	#classVars : [
 		'Translators'
 	],
-	#category : #'I18N-Core-Translations'
+	#category : 'I18N-Core-Translations',
+	#package : 'I18N-Core',
+	#tag : 'Translations'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 I18NTranslator class >> addTranslator: aTranslator [
 
-	self translators at: aTranslator getLanguage asSymbol put: aTranslator
+	self translators
+		at: aTranslator getLanguage asSymbol
+		put: aTranslator
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 I18NTranslator class >> defaultTranslator [
 
-	^self forLanguage: 'EN'
+	^ self forLanguage: 'EN'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 I18NTranslator class >> forLanguage: aLanguage [
 
-	^self translators 
-			at: aLanguage asSymbol
-			ifAbsentPut: (self newForLanguage: aLanguage)
+	^ self translators
+		  at: aLanguage asSymbol
+		  ifAbsentPut: (self newForLanguage: aLanguage)
 ]
 
-{ #category : #initialization }
+{ #category : 'class initialization' }
 I18NTranslator class >> initialize [
 
-	self reset.
-	 
+	self reset
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 I18NTranslator class >> languages [
 
-	^self translators values collect: [:each |  each getLanguage ]
+	^ self translators values collect: [ :each | each getLanguage ]
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 I18NTranslator class >> newForLanguage: aLanguage [
 
-	^(self new)
-		language: aLanguage;
-		yourself
+	^ self new
+		  language: aLanguage;
+		  yourself
 ]
 
-{ #category : #initialization }
+{ #category : 'class initialization' }
 I18NTranslator class >> reset [
+	<script>
 
 	Translators := nil
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 I18NTranslator class >> translators [
+	<sampleInstance>
 
 	Translators ifNil: [ Translators := Dictionary new ].
 	^Translators
 ]
 
-{ #category : #'message handling' }
+{ #category : 'reflective operations' }
 I18NTranslator >> doesNotUnderstand: aMessage [
-	|translation|
-	translation := (self translationFor:  aMessage selector).
-	translation ifNil: [ ^super doesNotUnderstand: aMessage ].
-	^aMessage hasArguments 
-		ifTrue: [ translation format: aMessage arguments ]
-		ifFalse: [ translation ]
-	
-	
+
+	| translation |
+	translation := self translationFor: aMessage selector.
+	translation ifNil: [ ^ super doesNotUnderstand: aMessage ].
+	^ aMessage hasArguments
+		  ifTrue: [ translation format: aMessage arguments ]
+		  ifFalse: [ translation ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 I18NTranslator >> getLanguage [
 	"use #getLanguage instead of #language since this is a translation symbol"
-	
-	^language
+
+	^ language
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 I18NTranslator >> language: aLanguage [
 
 	language := aLanguage
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 I18NTranslator >> printOn: aStream [
 
 	aStream nextPutAll: 'Translator for: '.
-	language printOn: aStream	
-
+	language printOn: aStream
 ]
 
-{ #category : #accessing }
-I18NTranslator >> translationFor: aSymbol [ 
+{ #category : 'accessing' }
+I18NTranslator >> translationFor: aSymbol [
 
-	^self translationMap at: aSymbol ifAbsent: nil
+	^ self translationMap at: aSymbol ifAbsent: nil
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 I18NTranslator >> translationKeys [
 
-	^self translationMap keys
+	^ self translationMap keys
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 I18NTranslator >> translationMap [
 
 	translationMap ifNil: [ translationMap := Dictionary new ].
-	^translationMap
+	^ translationMap
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 I18NTranslator >> translationMap: aMap [
 
 	translationMap := aMap
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 I18NTranslator >> translations [
 
-	^self translationMap values
+	^ self translationMap values
 ]
