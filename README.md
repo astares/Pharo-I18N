@@ -97,7 +97,7 @@ If we add a translation and open the tool we will see our entry for the english 
 |englishTranslator|
 englishTranslator := I18NTranslator defaultTranslator.
 englishTranslator translationMap at: #welcome put: 'Welcome'.
-I18NTranslationViewerApplication run
+I18NTranslationViewerApplication open
 ```
 
 ### Adding more languages/translators
@@ -119,7 +119,7 @@ I18NTranslator translators inspect
 Now two translators are registered with the framework - one for the english and one for german language. Lets open the translation viewer again:
 
 ```Smalltalk    
-I18NTranslationViewerApplication run
+I18NTranslationViewerApplication open
 ```
 
 You will now notice that the viewer has a new column for the german language. But the entry for our welcome text is still set to nil.
@@ -281,7 +281,7 @@ Do not forget to call the #initialize method to (re)initialize the translations:
 Also check the translations in the translation viewer.
 
 ```Smalltalk
-    I18NTranslationViewerApplication run
+    I18NTranslationViewerApplication open
 
 ```
 
