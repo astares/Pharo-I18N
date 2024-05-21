@@ -1,8 +1,12 @@
+"
+Baseline for [https://github.com/astares/Pharo-I18N](https://github.com/astares/Pharo-I18N)
+"
 Class {
 	#name : 'BaselineOfI18N',
 	#superclass : 'BaselineOf',
-	#category : 'BaselineOfI18N',
-	#package : 'BaselineOfI18N'
+	#category : 'BaselineOfI18N-Base',
+	#package : 'BaselineOfI18N',
+	#tag : 'Base'
 }
 
 { #category : 'baselines' }
