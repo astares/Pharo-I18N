@@ -10,6 +10,16 @@ Class {
 	#category : #'I18N-Tools-Translations'
 }
 
+{ #category : #accessing }
+I18NTranslationViewerPresenter >> allTranslationKeys [
+	"Get all the unique keys from I18NTranslators"
+	| allKeys |
+	allKeys := Set new.
+	I18NTranslator translators valuesDo: [ :translator |
+		allKeys addAll: translator translationMap keys ].
+	^ allKeys asSortedCollection
+]
+
 { #category : #layout }
 I18NTranslationViewerPresenter >> defaultLayout [ 
     ^ SpBoxLayout newVertical
@@ -29,26 +39,25 @@ I18NTranslationViewerPresenter >> initializePresenters [
 
 { #category : #'private - initialization' }
 I18NTranslationViewerPresenter >> initializeTranslations [
-    translations := self instantiate: SpTreeTablePresenter.
-    translations beResizable.
 
-    "Add a column for the translation keys"
-    translations addColumn: (SpStringTableColumn new
-                             title: 'Key';
-                             evaluated: [:node | node asString];
-                             yourself).
+	translations := self instantiate: SpTreeTablePresenter.
+	translations beResizable.
 
-    "Add a column for each language with translations"
-    self translator translators do: [:translator |
-        translations addColumn: (SpStringTableColumn new
-                                 title: translator getLanguage;
-                                 evaluated: [:node | 
-                                     (self translator forLanguage: translator getLanguage) translationFor: node];
-                                 yourself)
-    ].
+	"Add a column for the translation keys"
+	translations addColumn: (SpStringTableColumn new
+			 title: 'Key';
+			 evaluated: [ :node | node asString ];
+			 yourself).
 
-    "Setup roots and potentially children if hierarchical data is involved"
-    translations roots: self translator defaultTranslator translationKeys sorted.
+	"Add a column for each language with translations"
+	I18NTranslator translators valuesDo: [ :translator |
+		translations addColumn: (SpStringTableColumn new
+				 title: translator getLanguage;
+				 evaluated: [ :node |
+					 (I18NTranslator forLanguage: translator getLanguage)
+						 translationFor: node ];
+				 yourself) ].
+	translations roots: self allTranslationKeys
 ]
 
 { #category : #TOREMOVE }
