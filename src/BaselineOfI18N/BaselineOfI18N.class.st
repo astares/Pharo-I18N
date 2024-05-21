@@ -17,14 +17,18 @@ BaselineOfI18N >> baseline: spec [
 		"Packages"
 		spec 
 			package: 'I18N-Core';
-			package: 'I18N-Tests-Core' with: [ spec requires: #('I18N-Core' ) ];
-			package: 'I18N-Tools' with: [ spec requires: #('I18N-Core' ) ].
+			package: 'I18N-Tests-Core' with: [ spec requires: #('I18N-Core') ];
+			package: 'I18N-Tools' with: [ spec requires: #('I18N-Core') ].
 			
 		"Groups"	
 		spec 
-			group: 'Core' with: #('I18N-Core' );
-			group: 'Tools' with: #('I18N-Tools' );
-			group: 'Tests' with: #('I18N-Tests-Core' );
-			group: 'all' with: #('Core' 'Tools' 'Tests' );
+			group: 'Core' with: #('I18N-Core');
+			group: 'Tools' with: #('I18N-Tools');
+			group: 'Tests' with: #('I18N-Tests-Core');
+			group: 'CI' with: #('Tests').
+
+		"Virtual groups"	
+		spec	
+			group: 'all' with: #('Core' 'Tools' 'Tests');
 			group: 'default' with: #('all' ) ]
 ]
