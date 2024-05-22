@@ -38,6 +38,13 @@ I18NTranslator class >> forLanguage: aLanguage [
 		  ifAbsentPut: (self newForLanguage: aLanguage)
 ]
 
+{ #category : 'testing' }
+I18NTranslator class >> hasLanguage: aLanguage [
+
+	^ self translators
+		  includesKey: aLanguage asSymbol
+]
+
 { #category : 'class initialization' }
 I18NTranslator class >> initialize [
 
