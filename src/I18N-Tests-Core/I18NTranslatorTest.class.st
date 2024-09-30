@@ -21,7 +21,8 @@ I18NTranslatorTest >> defaultTestClass [
 { #category : 'initialization' }
 I18NTranslatorTest >> initTestInstance [
 
-	instance := self defaultTestClass new
+	instance := self defaultTestClass newForLanguage: 'DE'.
+	instance translationMap at: #welcome put: 'Willkommen'
 ]
 
 { #category : 'running' }
@@ -49,19 +50,32 @@ I18NTranslatorTest >> testDefaultTranslatorIsEnglish [
 ]
 
 { #category : 'tests' }
-I18NTranslatorTest >> testHasDefaultTranslator [
+I18NTranslatorTest >> testGetLanguage [
 
-	self assert: self defaultTestClass defaultTranslator notNil
+	self assert: instance getLanguage equals: 'DE'
 ]
 
 { #category : 'tests' }
-I18NTranslatorTest >> testHasTranslators [
+I18NTranslatorTest >> testHasDefaultTranslator [
 
+	self assert: self defaultTestClass defaultTranslator notNil.
 	self assert: self defaultTestClass translators notEmpty
 ]
 
 { #category : 'tests' }
-I18NTranslatorTest >> testLanguages [
+I18NTranslatorTest >> testTranslationFor [
 
-	self assert: self defaultTestClass languages notEmpty
+	self assert: (instance translationFor: #welcome) equals: 'Willkommen'
+]
+
+{ #category : 'tests' }
+I18NTranslatorTest >> testTranslationForWithMissingTranslationWithBlock [
+
+	self assert: (instance translationFor: #world ifNotFound: [ 'Welt' ]) equals: 'Welt'
+]
+
+{ #category : 'tests' }
+I18NTranslatorTest >> testTranslationForWithMissingTranslationWithString [
+
+	self assert: (instance translationFor: #world ifNotFound: 'Welt') equals: 'Welt'
 ]

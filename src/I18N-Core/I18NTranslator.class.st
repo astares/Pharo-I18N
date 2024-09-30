@@ -118,6 +118,14 @@ I18NTranslator >> translationFor: aSymbol [
 ]
 
 { #category : 'accessing' }
+I18NTranslator >> translationFor: aSymbol ifNotFound: aBlock [
+	"Answer the translation associated with the given symbol - if it isn't found, answer 
+	 the result of evaluating the given block."
+
+	^ self translationMap at: aSymbol ifAbsent: aBlock
+]
+
+{ #category : 'accessing' }
 I18NTranslator >> translationKeys [
 
 	^ self translationMap keys
