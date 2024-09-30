@@ -118,6 +118,12 @@ I18NTranslator >> translationFor: aSymbol [
 ]
 
 { #category : 'accessing' }
+I18NTranslator >> translationFor: aSymbol ifNotFound: defaultValue [
+
+	^ self translationMap at: aSymbol ifAbsent: defaultValue
+]
+
+{ #category : 'accessing' }
 I18NTranslator >> translationKeys [
 
 	^ self translationMap keys
