@@ -17,10 +17,10 @@ I18NTranslationViewerApplication class >> menuCommandOn: aBuilder [
 
 	(aBuilder item: #'I18N Translations')
 				action: [self open];
-				parent: #Searching;
+				parent: #Tools;
 				help: 'Your translations with I18N-Pharo';
 				order: 10;
-				iconName: #scriptManagerIcon
+				iconName: #scriptManager
 ]
 
 { #category : 'instance creation' }
