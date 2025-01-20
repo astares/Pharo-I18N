@@ -1,11 +1,8 @@
 # Pharo-I18N
 
-## Project info
+**Internationalization support for applications written in [Pharo][1]** (for instance [Seaside][2] applications). It allows for simple handling of multiple translations of an app without a dependency to other external frameworks (like GetText, ...).
 
-The "I18N" project provides Internationalization support for applications written in [Pharo][1] (for instance [Seaside][2] applications). It allows for simple handling of multiple translations of an app without a dependency to other external frameworks (like GetText, ...).
-
-### Project location
-The project is located on GitHub at [https://github.com/astares/Pharo-I18N][3]
+[![Pharo](https://img.shields.io/static/v1?style=for-the-badge&message=Pharo&color=3297d4&logo=Harbor&logoColor=FFFFFF&label=)](https://www.pharo.org) 
 
 [![Unit Tests](https://github.com/astares/Pharo-I18N/actions/workflows/build.yml/badge.svg)](https://github.com/astares/Pharo-I18N/actions/workflows/build.yml)
 [![Coverage Status](https://codecov.io/github/astares/Pharo-Pharo-I18N/coverage.svg?branch=master)](https://codecov.io/gh/astares/Pharo-Pharo-I18N/branch/master)
@@ -13,9 +10,8 @@ The project is located on GitHub at [https://github.com/astares/Pharo-I18N][3]
 [![Pharo 11](https://img.shields.io/badge/Pharo-11-%23aac9ff.svg)](https://pharo.org/download)
 [![Pharo 12](https://img.shields.io/badge/Pharo-12-%23aac9ff.svg)](https://pharo.org/download)
 
-### Demo
-
-You can checkout a demo in the Lighthouse Seaside sample application. This project is [also on SmalltalkHub][4] and a ready to run image for "Lighthouse" can be found on the [Pharo Contribution CI][5] server. Lighthouse uses the I18N framework to provide  english, german, french, italian, spanish and arabic translation for a web user interface.
+### Project location
+The project is located on GitHub at [https://github.com/astares/Pharo-I18N][3]
 
 ### License
 The code of I18N is under MIT License.
